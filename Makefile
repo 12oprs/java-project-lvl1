@@ -10,3 +10,11 @@ check-updates:
 	./gradlew dependencyUpdates
 list:
 	@grep '^[^#[:space:]].*:' Makefile
+lint:
+	./gradlew checkstyleMain
+
+.PHONY: build
+
+build:
+	./gradlew clean build
+
