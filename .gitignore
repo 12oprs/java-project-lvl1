@@ -5,3 +5,5 @@
 build
 # Ignore asdf work's information
 .tool-versions
+#Ignore IDE IDEA work's files
+.idea
