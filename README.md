@@ -6,3 +6,5 @@
 ![myFirstWorkflow](https://github.com/12oprs/java-project-lvl1/actions/workflows/myFirstWorkflow.yml/badge.svg)
 
 https://asciinema.org/a/xvXz8tbbhJcF7LsjzK1Mu707x
+
+https://asciinema.org/a/EC8V9ARWYTghsUL4HihElAf77
