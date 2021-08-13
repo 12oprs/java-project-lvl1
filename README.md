@@ -5,6 +5,11 @@
 
 ![myFirstWorkflow](https://github.com/12oprs/java-project-lvl1/actions/workflows/myFirstWorkflow.yml/badge.svg)
 
+Even
 https://asciinema.org/a/xvXz8tbbhJcF7LsjzK1Mu707x
 
+Calc
 https://asciinema.org/a/EC8V9ARWYTghsUL4HihElAf77
+
+NOD
+https://asciinema.org/a/iBeHuYR1A0mpPYUS1sr4JYWMw
