@@ -10,13 +10,6 @@ import java.util.Scanner;
 
 public class App {
     public static void main(String[] args) {
-        final int exit = 0;
-        final int greet = 1;
-        final int even = 2;
-        final int calc = 3;
-        final int gcd = 4;
-        final int progression = 5;
-        final int prime = 6;
         Scanner sc = new Scanner(System.in);
         System.out.println("Please enter the game number and press Enter.");
         System.out.println("1 - Greet");
@@ -28,27 +21,27 @@ public class App {
         System.out.println("0 - Exit");
         System.out.print("Your choice: ");
 
-        int choice = sc.nextInt();
+        String choice = sc.nextLine();
         System.out.println("");
         switch (choice) {
-            case exit:
+            case "0":
                 break;
-            case greet:
+            case "1":
                 Cli.greeting();
                 break;
-            case even:
+            case "2":
                 Even.start();
                 break;
-            case calc:
+            case "3":
                 Calc.start();
                 break;
-            case gcd:
+            case "4":
                 GCD.start();
                 break;
-            case progression:
+            case "5":
                 Progression.start();
                 break;
-            case prime:
+            case "6":
                 Prime.start();
             default:
                 break;
