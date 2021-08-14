@@ -4,6 +4,7 @@ import hexlet.code.Engine;
 import java.util.Random;
 
 public class Even {
+
     private static String rules = "Answer 'yes' if number even otherwise answer 'no'.";
     private static String[] answers = new String[Engine.getAttempts()];
 

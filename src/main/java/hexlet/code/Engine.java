@@ -5,6 +5,7 @@ import java.util.Scanner;
 public class Engine {
 
     private static final int ATTEMPTS = 3;
+
     private static boolean gameResult = true;
 
     public static int getAttempts() {
@@ -47,6 +48,4 @@ public class Engine {
             System.out.println("Let's try again, " + Cli.getName() + "!");
         }
     }
-
-
 }

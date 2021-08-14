@@ -6,7 +6,6 @@ public class Cli {
     private static String userName;
 
     public static void greeting() {
-
         Scanner sc = new Scanner(System.in);
         System.out.println("Welcome to the Brain Games!");
         System.out.print("May I have your name? ");
@@ -18,5 +17,4 @@ public class Cli {
     public static String getName() {
         return userName;
     }
-
 }

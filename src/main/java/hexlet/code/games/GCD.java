@@ -4,9 +4,10 @@ import hexlet.code.Engine;
 import java.util.Random;
 
 public class GCD {
+    private static final int RANGE = 100;
+
     private static String rules = "Find the greatest common divisor of given numbers.";
     private static String[] answers = new String[Engine.getAttempts()];
-    private static final int RANGE = 100;
 
     public static void start() {
             Engine.start(rules, getQuestions(), answers);

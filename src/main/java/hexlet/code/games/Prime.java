@@ -5,8 +5,7 @@ import hexlet.code.Engine;
 import java.util.Random;
 
 public class Prime {
-    public static final int[] PRIME_CALC_VARS = {3, 5, 6};
-
+    private static final int[] PRIME_CALC_VARS = {3, 5, 6};
     private static final int RANGE = 100;
 
     private static String rules = "Answer 'yes' if given number is prime. Otherwise answer 'no'.";

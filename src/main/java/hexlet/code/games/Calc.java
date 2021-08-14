@@ -6,9 +6,10 @@ import hexlet.code.Engine;
 
 public class Calc {
 
+    private static final int RANGE = 100;
+
     private static String rules = "What is the result of the expression?";
     private static String[] answers = new String[Engine.getAttempts()];
-    private static final int RANGE = 100;
 
     public static void start() {
         Engine.start(rules, getQuestions(), answers);
