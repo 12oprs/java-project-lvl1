@@ -7,41 +7,37 @@ import java.util.Random;
 public class Prime {
     private static final int[] PRIME_CALC_VARS = {3, 5, 6};
     private static final int RANGE = 100;
-
-    private static String rules = "Answer 'yes' if given number is prime. Otherwise answer 'no'.";
-    private static String[] answers = new String[Engine.getAttempts()];
+    private static final String RULES = "Answer 'yes' if given number is prime. Otherwise answer 'no'.";
 
     public static void start() {
-        Engine.start(rules, getQuestions(), answers);
-    }
-    static String[] getQuestions() {
-        String[] questions = new String[Engine.getAttempts()];
-        Random rand = new Random();
-        for (int i = 0; i < questions.length; i++) {
-            int temp = rand.nextInt(RANGE);
-            questions[i] = Integer.toString(temp);
-            calcAnswer(i, temp);
-        }
-        return questions;
+        Engine.start(RULES, getQAndA());
     }
 
-    static void calcAnswer(int index, int a) {
-        boolean prime = true;
-        if (a <= 1) {
-            prime = false;
-        } else if (a <= PRIME_CALC_VARS[0]) {
-            prime = true;
-        } else if (a % 2 == 0 || a % PRIME_CALC_VARS[0] == 0) {
-            prime = false;
-        }
-        int n = PRIME_CALC_VARS[1];
-        while (n * n <= a) {
-            if (a % n == 0 || a % (n + 2) == 0) {
+    static String[] getQAndA() {
+        String[] qAndA = new String[Engine.ATTEMPTS * 2];
+        Random rand = new Random();
+        for (int i = 0; i < qAndA.length / 2; i++) {
+            int temp = rand.nextInt(RANGE);
+            qAndA[i] = Integer.toString(temp);
+
+            boolean prime = true;
+            if (temp <= 1) {
+                prime = false;
+            } else if (temp <= PRIME_CALC_VARS[0]) {
+                prime = true;
+            } else if (temp % 2 == 0 || temp % PRIME_CALC_VARS[0] == 0) {
                 prime = false;
             }
-            n = n + PRIME_CALC_VARS[2];
+            int n = PRIME_CALC_VARS[1];
+            while (n * n <= temp) {
+                if (temp % n == 0 || temp % (n + 2) == 0) {
+                    prime = false;
+                }
+                n = n + PRIME_CALC_VARS[2];
+            }
+            qAndA[Engine.ATTEMPTS + i] = prime ? "yes" : "no";
         }
-        answers[index] = prime ? "yes" : "no";
+        return qAndA;
     }
 }
 

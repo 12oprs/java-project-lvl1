@@ -1,38 +1,34 @@
 package hexlet.code.games;
 
 import hexlet.code.Engine;
+
 import java.util.Random;
 
 public class GCD {
     private static final int RANGE = 100;
-
-    private static String rules = "Find the greatest common divisor of given numbers.";
-    private static String[] answers = new String[Engine.getAttempts()];
+    private static final String RULES = "Find the greatest common divisor of given numbers.";
 
     public static void start() {
-            Engine.start(rules, getQuestions(), answers);
-        }
-
-    static String[] getQuestions() {
-        String[] questions = new String[Engine.getAttempts()];
-        Random rand = new Random();
-        for (int i = 0; i < questions.length; i++) {
-            int a = rand.nextInt(RANGE) + 1;
-            int b = rand.nextInt(RANGE) + 1;
-            questions[i] = a + " " + b;
-            calcAnswer(i, a, b);
-        }
-        return questions;
+        Engine.start(RULES, getQAndA());
     }
 
-    static void calcAnswer(int index, int a, int b) {
-        int min = Math.min(a, b);
-        int max = Math.max(a, b);
-        for (int i = min; i > 0; i--) {
-            if ((max % i == 0) && (min % i == 0)) {
-                answers[index] = Integer.toString(i);
-                break;
+    static String[] getQAndA() {
+        String[] qAndA = new String[Engine.ATTEMPTS * 2];
+        Random rand = new Random();
+        for (int i = 0; i < qAndA.length / 2; i++) {
+            int a = rand.nextInt(RANGE) + 1;
+            int b = rand.nextInt(RANGE) + 1;
+            qAndA[i] = a + " " + b;
+
+            int min = Math.min(a, b);
+            int max = Math.max(a, b);
+            for (int j = Math.min(a, b); j > 0; j--) {
+                if ((max % j == 0) && (min % j == 0)) {
+                    qAndA[Engine.ATTEMPTS + i] = Integer.toString(j);
+                    break;
+                }
             }
         }
+        return qAndA;
     }
 }
