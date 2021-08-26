@@ -11,13 +11,13 @@ public class Even {
         Engine.start(RULES, getQAndA());
     }
 
-    static String[] getQAndA() {
-        String[] qAndA = new String[Engine.ATTEMPTS * 2];
+    static String[][] getQAndA() {
+        String[][] qAndA = new String[2][Engine.ATTEMPTS];
         Random rand = new Random();
-        for (int i = 0; i < qAndA.length / 2; i++) {
+        for (int i = 0; i < qAndA[0].length(); i++) {
             int temp = rand.nextInt();
-            qAndA[i] = Integer.toString(temp);
-            qAndA[Engine.ATTEMPTS + i] = temp % 2 == 0 ? "yes" : "no";
+            qAndA[0][i] = Integer.toString(temp);
+            qAndA[1][i] = temp % 2 == 0 ? "yes" : "no";
         }
         return qAndA;
     }

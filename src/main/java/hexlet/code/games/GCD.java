@@ -12,19 +12,19 @@ public class GCD {
         Engine.start(RULES, getQAndA());
     }
 
-    static String[] getQAndA() {
-        String[] qAndA = new String[Engine.ATTEMPTS * 2];
+    static String[][] getQAndA() {
+        String[][] qAndA = new String[2][Engine.ATTEMPTS];
         Random rand = new Random();
-        for (int i = 0; i < qAndA.length / 2; i++) {
+        for (int i = 0; i < qAndA[0].length(); i++) {
             int a = rand.nextInt(RANGE) + 1;
             int b = rand.nextInt(RANGE) + 1;
-            qAndA[i] = a + " " + b;
+            qAndA[0][i] = a + " " + b;
 
             int min = Math.min(a, b);
             int max = Math.max(a, b);
             for (int j = Math.min(a, b); j > 0; j--) {
                 if ((max % j == 0) && (min % j == 0)) {
-                    qAndA[Engine.ATTEMPTS + i] = Integer.toString(j);
+                    qAndA[1][i] = Integer.toString(j);
                     break;
                 }
             }

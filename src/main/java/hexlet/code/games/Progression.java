@@ -13,10 +13,10 @@ public class Progression {
         Engine.start(RULES, getQAndA());
     }
 
-    static String[] getQAndA() {
-        String[] qAndA = new String[Engine.ATTEMPTS * 2];
+    static String[][] getQAndA() {
+        String[][] qAndA = new String[2][Engine.ATTEMPTS];
         Random rand = new Random();
-        for (int i = 0; i < qAndA.length / 2; i++) {
+        for (int i = 0; i < qAndA[0].length(); i++) {
             int progrLength = MIN_PROGR_LENGTH + rand.nextInt(MIN_PROGR_LENGTH);
             int step = rand.nextInt(RANGE) + 1;
             int hiddenNumber = rand.nextInt(progrLength) + 1;
@@ -30,9 +30,9 @@ public class Progression {
                 buffer += nextNumber + " ";
                 nextNumber += step;
             }
-            qAndA[i] = buffer;
+            qAndA[0][i] = buffer;
 
-            qAndA[Engine.ATTEMPTS + i] = Integer.toString(step * hiddenNumber);
+            qAndA[1][i] = Integer.toString(step * hiddenNumber);
         }
         return qAndA;
     }

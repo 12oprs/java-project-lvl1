@@ -13,25 +13,25 @@ public class Calc {
         Engine.start(RULES, getQAndA());
     }
 
-    static String[] getQAndA() {
-        String[] qAndA = new String[Engine.ATTEMPTS * 2];
+    static String[][] getQAndA() {
+        String[][] qAndA = new String[2][Engine.ATTEMPTS];
         Random rand = new Random();
 
-        for (int i = 0; i < qAndA.length / 2; i++) {
+        for (int i = 0; i < qAndA[0].length(); i++) {
             int randOpIndex = rand.nextInt(OPERATIONS.length);
             int a = rand.nextInt(RANGE);
             int b = rand.nextInt(RANGE);
-            qAndA[i] = a + " " + OPERATIONS[randOpIndex] + " " + b;
+            qAndA[0][i] = a + " " + OPERATIONS[randOpIndex] + " " + b;
 
             switch (OPERATIONS[randOpIndex]) {
                 case "+":
-                    qAndA[Engine.ATTEMPTS + i] = Integer.toString(a + b);
+                    qAndA[1][i] = Integer.toString(a + b);
                     break;
                 case "-":
-                    qAndA[Engine.ATTEMPTS + i] = Integer.toString(a - b);
+                    qAndA[1][i] = Integer.toString(a - b);
                     break;
                 case "*":
-                    qAndA[Engine.ATTEMPTS + i] = Integer.toString(a * b);
+                    qAndA[1][i] = Integer.toString(a * b);
                     break;
                 default:
                     throw new RuntimeException("Unavailable operator");
