@@ -1,11 +1,9 @@
 package hexlet.code.games;
 
-import java.util.Random;
-
 import hexlet.code.Engine;
+import hexlet.code.Utils;
 
 public class Calc {
-    private static final int RANGE = 100;
     private static final String RULES = "What is the result of the expression?";
     private static final String[] OPERATIONS = {"+", "-", "*"};
 
@@ -15,12 +13,11 @@ public class Calc {
 
     static String[][] getQAndA() {
         String[][] qAndA = new String[2][Engine.ATTEMPTS];
-        Random rand = new Random();
 
         for (int i = 0; i < qAndA[0].length; i++) {
-            int randOpIndex = rand.nextInt(OPERATIONS.length);
-            int a = rand.nextInt(RANGE);
-            int b = rand.nextInt(RANGE);
+            int randOpIndex = Utils.getRandomValue(OPERATIONS.length);
+            int a = Utils.getRandomValue();
+            int b = Utils.getRandomValue();
             qAndA[0][i] = a + " " + OPERATIONS[randOpIndex] + " " + b;
             getAnswers(i, randOpIndex, a, b, qAndA);
         }
