@@ -20,7 +20,7 @@ public class Engine {
     }
 
     static void startGame(String[] qAndA) {
-        boolean gameResult = true;
+        boolean isWinner = true;
         Scanner sc = new Scanner(System.in);
         for (int i = 0; i < ATTEMPTS; i++) {
             System.out.println("Question: " + qAndA[i]);
@@ -31,11 +31,11 @@ public class Engine {
             } else {
                 System.out.println("'" + answer + "' is wrong answer ;(. "
                         + "Correct answer was '" + qAndA[ATTEMPTS + i] + "'.");
-                gameResult = false;
+                isWinner = false;
                 break;
             }
         }
-        if (gameResult) {
+        if (isWinner) {
             System.out.println("Congratulations, " + userName + "!");
         } else {
             System.out.println("Let's try again, " + userName + "!");
