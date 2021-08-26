@@ -17,7 +17,7 @@ public class Calc {
         String[][] qAndA = new String[2][Engine.ATTEMPTS];
         Random rand = new Random();
 
-        for (int i = 0; i < qAndA[0].length(); i++) {
+        for (int i = 0; i < qAndA[0].length; i++) {
             int randOpIndex = rand.nextInt(OPERATIONS.length);
             int a = rand.nextInt(RANGE);
             int b = rand.nextInt(RANGE);

@@ -14,7 +14,7 @@ public class Even {
     static String[][] getQAndA() {
         String[][] qAndA = new String[2][Engine.ATTEMPTS];
         Random rand = new Random();
-        for (int i = 0; i < qAndA[0].length(); i++) {
+        for (int i = 0; i < qAndA[0].length; i++) {
             int temp = rand.nextInt();
             qAndA[0][i] = Integer.toString(temp);
             qAndA[1][i] = temp % 2 == 0 ? "yes" : "no";

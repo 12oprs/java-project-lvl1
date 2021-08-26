@@ -15,7 +15,7 @@ public class GCD {
     static String[][] getQAndA() {
         String[][] qAndA = new String[2][Engine.ATTEMPTS];
         Random rand = new Random();
-        for (int i = 0; i < qAndA[0].length(); i++) {
+        for (int i = 0; i < qAndA[0].length; i++) {
             int a = rand.nextInt(RANGE) + 1;
             int b = rand.nextInt(RANGE) + 1;
             qAndA[0][i] = a + " " + b;

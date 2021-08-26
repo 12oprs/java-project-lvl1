@@ -16,7 +16,7 @@ public class Progression {
     static String[][] getQAndA() {
         String[][] qAndA = new String[2][Engine.ATTEMPTS];
         Random rand = new Random();
-        for (int i = 0; i < qAndA[0].length(); i++) {
+        for (int i = 0; i < qAndA[0].length; i++) {
             int progrLength = MIN_PROGR_LENGTH + rand.nextInt(MIN_PROGR_LENGTH);
             int step = rand.nextInt(RANGE) + 1;
             int hiddenNumber = rand.nextInt(progrLength) + 1;

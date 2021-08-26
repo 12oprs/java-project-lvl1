@@ -16,7 +16,7 @@ public class Prime {
     static String[][] getQAndA() {
         String[][] qAndA = new String[2][Engine.ATTEMPTS];
         Random rand = new Random();
-        for (int i = 0; i < qAndA[0].length(); i++) {
+        for (int i = 0; i < qAndA[0].length; i++) {
             int temp = rand.nextInt(RANGE);
             qAndA[0][i] = Integer.toString(temp);
             getAnswers(i, temp, qAndA);
