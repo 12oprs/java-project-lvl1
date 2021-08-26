@@ -31,9 +31,13 @@ public class Progression {
                 nextNumber += step;
             }
             qAndA[0][i] = buffer;
-
-            qAndA[1][i] = Integer.toString(step * hiddenNumber);
+            getAnswers(i, step, hiddenNumber, qAndA);
         }
+        return qAndA;
+    }
+
+    static String[][] getAnswers(int i, int step, int hiddenNumber, String[][] qAndA) {
+        qAndA[1][i] = Integer.toString(step * hiddenNumber);
         return qAndA;
     }
 }

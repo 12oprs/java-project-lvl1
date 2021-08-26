@@ -19,14 +19,19 @@ public class GCD {
             int a = rand.nextInt(RANGE) + 1;
             int b = rand.nextInt(RANGE) + 1;
             qAndA[0][i] = a + " " + b;
+            getAnswers(i, a, b, qAndA);
 
-            int min = Math.min(a, b);
-            int max = Math.max(a, b);
-            for (int j = Math.min(a, b); j > 0; j--) {
-                if ((max % j == 0) && (min % j == 0)) {
-                    qAndA[1][i] = Integer.toString(j);
-                    break;
-                }
+        }
+        return qAndA;
+    }
+
+    static String[][] getAnswers(int i, int a, int b, String[][] qAndA) {
+        int min = Math.min(a, b);
+        int max = Math.max(a, b);
+        for (int j = Math.min(a, b); j > 0; j--) {
+            if ((max % j == 0) && (min % j == 0)) {
+                qAndA[1][i] = Integer.toString(j);
+                break;
             }
         }
         return qAndA;

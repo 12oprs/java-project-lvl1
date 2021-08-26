@@ -22,20 +22,24 @@ public class Calc {
             int a = rand.nextInt(RANGE);
             int b = rand.nextInt(RANGE);
             qAndA[0][i] = a + " " + OPERATIONS[randOpIndex] + " " + b;
+            getAnswers(i, randOpIndex, a, b, qAndA);
+        }
+        return qAndA;
+    }
 
-            switch (OPERATIONS[randOpIndex]) {
-                case "+":
-                    qAndA[1][i] = Integer.toString(a + b);
-                    break;
-                case "-":
-                    qAndA[1][i] = Integer.toString(a - b);
-                    break;
-                case "*":
-                    qAndA[1][i] = Integer.toString(a * b);
-                    break;
-                default:
-                    throw new RuntimeException("Unavailable operator");
-            }
+    static String[][] getAnswers(int i, int randOpIndex, int a, int b, String[][] qAndA) {
+        switch (OPERATIONS[randOpIndex]) {
+            case "+":
+                qAndA[1][i] = Integer.toString(a + b);
+                break;
+            case "-":
+                qAndA[1][i] = Integer.toString(a - b);
+                break;
+            case "*":
+                qAndA[1][i] = Integer.toString(a * b);
+                break;
+            default:
+                throw new RuntimeException("Unavailable operator");
         }
         return qAndA;
     }
