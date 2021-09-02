@@ -3,6 +3,8 @@ package hexlet.code.games;
 import hexlet.code.Engine;
 import hexlet.code.Utils;
 
+import java.util.Arrays;
+
 public class Calc {
     private static final String RULES = "What is the result of the expression?";
     private static final String[] OPERATIONS = {"+", "-", "*"};
@@ -19,24 +21,29 @@ public class Calc {
             int a = Utils.getRandomValue();
             int b = Utils.getRandomValue();
             qAndA[0][i] = a + " " + OPERATIONS[randOpIndex] + " " + b;
-            getAnswers(i, randOpIndex, a, b, qAndA);
+            qAndA[1][i] = getAnswer(qAndA[0][i]);
+
         }
         return qAndA;
     }
 
-    static String[][] getAnswers(int i, int randOpIndex, int a, int b, String[][] qAndA) {
-        switch (OPERATIONS[randOpIndex]) {
+    static String getAnswer(String question) {
+        String answer = new String;
+        String operator = question.split(" ")[1];
+        int a = Integer.parseInt(question.split(" ")[0]);
+        int b = Integer.parseInt(question.split(" ")[2]);
+        switch (operator) {
             case "+" -> {
-                qAndA[1][i] = Integer.toString(a + b);
+                answer = Integer.toString(a + b);
             }
             case "-" -> {
-                qAndA[1][i] = Integer.toString(a - b);
+                answer = Integer.toString(a - b);
             }
             case "*" -> {
-                qAndA[1][i] = Integer.toString(a * b);
+                answer = Integer.toString(a * b);
             }
             default -> throw new RuntimeException("Unavailable operator");
         }
-        return qAndA;
+        return answer;
     }
 }
