@@ -26,17 +26,16 @@ public class Calc {
 
     static String[][] getAnswers(int i, int randOpIndex, int a, int b, String[][] qAndA) {
         switch (OPERATIONS[randOpIndex]) {
-            case "+":
+            case "+" -> {
                 qAndA[1][i] = Integer.toString(a + b);
-                break;
-            case "-":
+            }
+            case "-" -> {
                 qAndA[1][i] = Integer.toString(a - b);
-                break;
-            case "*":
+            }
+            case "*" -> {
                 qAndA[1][i] = Integer.toString(a * b);
-                break;
-            default:
-                throw new RuntimeException("Unavailable operator");
+            }
+            default -> throw new RuntimeException("Unavailable operator");
         }
         return qAndA;
     }
