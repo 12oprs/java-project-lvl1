@@ -3,8 +3,6 @@ package hexlet.code.games;
 import hexlet.code.Engine;
 import hexlet.code.Utils;
 
-import java.util.Arrays;
-
 public class Calc {
     private static final String RULES = "What is the result of the expression?";
     private static final String[] OPERATIONS = {"+", "-", "*"};
@@ -28,7 +26,7 @@ public class Calc {
     }
 
     static String getAnswer(String question) {
-        String answer = new String;
+        String answer = "";
         String operator = question.split(" ")[1];
         int a = Integer.parseInt(question.split(" ")[0]);
         int b = Integer.parseInt(question.split(" ")[2]);

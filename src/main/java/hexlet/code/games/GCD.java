@@ -22,7 +22,7 @@ public class GCD {
     }
 
     static String getAnswer(String question) {
-        String answer = new String;
+        String answer = "";
         int a = Integer.parseInt(question.split(" ")[0]);
         int b = Integer.parseInt(question.split(" ")[1]);
         int min = Math.min(a, b);
