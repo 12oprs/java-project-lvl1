@@ -10,9 +10,8 @@ import java.util.Scanner;
 
 public class App {
     public static void main(String[] args) {
-        Scanner sc = new Scanner(System.in);
         printMenu();
-        String choice = sc.nextLine();
+        String choice = new Scanner(System.in).nextLine();
         System.out.println("");
         switch (choice) {
             case "0" -> System.out.println("Goodbye!");
