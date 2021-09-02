@@ -16,12 +16,13 @@ public class Prime {
         for (int i = 0; i < qAndA[0].length; i++) {
             int temp = Utils.getRandomValue();
             qAndA[0][i] = Integer.toString(temp);
-            getAnswers(i, temp, qAndA);
+            qAndA[1][i] = getAnswer(qAndA[0][i]);
         }
         return qAndA;
     }
 
-    static String[][] getAnswers(int i, int temp, String[][] qAndA) {
+    static String getAnswer(String question) {
+        int temp = Integer.parseInt(question);
         boolean prime = true;
         if (temp <= 1) {
             prime = false;
@@ -37,8 +38,7 @@ public class Prime {
             }
             n = n + PRIME_CALC_VARS[2];
         }
-        qAndA[1][i] = prime ? "yes" : "no";
-        return qAndA;
+        return prime ? "yes" : "no";
     }
 }
 
