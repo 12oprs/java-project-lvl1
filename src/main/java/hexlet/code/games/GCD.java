@@ -16,21 +16,23 @@ public class GCD {
             int a = Utils.getRandomValue() + 1;
             int b = Utils.getRandomValue() + 1;
             qAndA[0][i] = a + " " + b;
-            getAnswers(i, a, b, qAndA);
-
+            qAndA[1][i] = getAnswer(qAndA[0][i]);
         }
         return qAndA;
     }
 
-    static String[][] getAnswers(int i, int a, int b, String[][] qAndA) {
+    static String getAnswer(String question) {
+        String answer = new String;
+        int a = Integer.parseInt(question.split(" ")[0]);
+        int b = Integer.parseInt(question.split(" ")[1]);
         int min = Math.min(a, b);
         int max = Math.max(a, b);
         for (int j = Math.min(a, b); j > 0; j--) {
             if ((max % j == 0) && (min % j == 0)) {
-                qAndA[1][i] = Integer.toString(j);
+                answer = Integer.toString(j);
                 break;
             }
         }
-        return qAndA;
+        return answer;
     }
 }
